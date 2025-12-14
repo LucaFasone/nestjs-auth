@@ -6,9 +6,10 @@
 The system is composed of 3 main containers managed via Docker Compose:
 
 ```mermaid
-    Client[Client / Postman] -- HTTP:3000 --> Gateway[API Gateway]
-    Gateway -- TCP:3001 --> Auth[Auth Microservice]
-    Auth -- Mongoose --> DB[(MongoDB)]
+flowchart LR
+  Client[Client / Postman] -->|HTTP :3000| Gateway[API Gateway]
+  Gateway -->|TCP :3001| Auth[Auth Microservice]
+  Auth -->|Mongoose| DB[(MongoDB)]
 ```
 
 ### Components
